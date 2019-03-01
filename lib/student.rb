@@ -49,9 +49,9 @@ class Student
   end
   
   def self.create(name, grade)
-    students = Student.new(name, grade)
-    students.save
-    students
+    student = Student.new(name, grade)
+    student.save
+    student
   end
  
   def self.find_by_name(name)
@@ -61,11 +61,11 @@ class Student
   end
   
   def self.new_from_db(row)
-    new_song = self.new  # self.new is the same as running Song.new
-    new_song.id = row[0]
-    new_song.name =  row[1]
-    new_song.length = row[2]
-    new_song  # return the newly created instance
+    new_student = self.new  
+    new_student.id = row[0]
+    new_student.name =  row[1]
+    new_student.grade = row[2]
+    new_student  
   end
   
 end
